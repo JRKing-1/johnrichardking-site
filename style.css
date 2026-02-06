@@ -12,7 +12,6 @@
 }
 
 :root {
-  /* Palette */
   --parchment:       #F5F0E8;
   --parchment-deep:  #EDE7DA;
   --ink:             #1A1A1A;
@@ -28,14 +27,12 @@
   --shadow-medium:   rgba(30, 28, 24, 0.12);
   --shadow-deep:     rgba(30, 28, 24, 0.18);
 
-  /* Typography */
   --font-serif:      'Cormorant Garamond', 'Georgia', serif;
   --font-sans:       'Inter', 'Helvetica Neue', sans-serif;
   --font-size-base:  17px;
   --line-height:     1.75;
   --reading-width:   720px;
 
-  /* Spacing */
   --space-xs:  0.5rem;
   --space-sm:  1rem;
   --space-md:  1.5rem;
@@ -44,7 +41,6 @@
   --space-2xl: 6rem;
   --space-3xl: 8rem;
 
-  /* Transitions */
   --ease-gentle:     cubic-bezier(0.25, 0.1, 0.25, 1);
   --transition-fast: 0.2s var(--ease-gentle);
   --transition-med:  0.35s var(--ease-gentle);
@@ -74,19 +70,9 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--ink);
 }
 
-h1 {
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  letter-spacing: -0.01em;
-}
-
-h2 {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  letter-spacing: -0.005em;
-}
-
-h3 {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-}
+h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); letter-spacing: -0.005em; }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 p {
   max-width: var(--reading-width);
@@ -100,9 +86,7 @@ a {
   transition: color var(--transition-fast);
 }
 
-a:hover {
-  color: var(--gold);
-}
+a:hover { color: var(--gold); }
 
 ::selection {
   background-color: var(--gold-faint);
@@ -110,7 +94,7 @@ a:hover {
 }
 
 
-/* --- Layout Container --- */
+/* --- Layout --- */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -120,12 +104,13 @@ a:hover {
 
 .container--narrow {
   max-width: var(--reading-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
 }
 
 
 /* ============================================================
    HEADER / NAVIGATION
-   Sticky, minimal. Left: brand. Right: links.
    ============================================================ */
 .site-header {
   position: sticky;
@@ -159,9 +144,7 @@ a:hover {
   text-decoration: none;
 }
 
-.site-header__brand:hover {
-  color: var(--ink);
-}
+.site-header__brand:hover { color: var(--ink); }
 
 .site-header__title {
   font-family: var(--font-serif);
@@ -211,21 +194,10 @@ a:hover {
   transition: width var(--transition-med);
 }
 
-.site-nav__link:hover {
-  color: var(--ink);
-}
-
-.site-nav__link:hover::after {
-  width: 100%;
-}
-
-.site-nav__link--active {
-  color: var(--ink);
-}
-
-.site-nav__link--active::after {
-  width: 100%;
-}
+.site-nav__link:hover { color: var(--ink); }
+.site-nav__link:hover::after { width: 100%; }
+.site-nav__link--active { color: var(--ink); }
+.site-nav__link--active::after { width: 100%; }
 
 /* Join button */
 .site-nav__cta {
@@ -246,7 +218,6 @@ a:hover {
   color: var(--gold);
   background-color: var(--gold-faint);
 }
-
 
 /* Mobile nav toggle */
 .nav-toggle {
@@ -271,11 +242,9 @@ a:hover {
 .nav-toggle.active .nav-toggle__bar:nth-child(1) {
   transform: translateY(6.5px) rotate(45deg);
 }
-
 .nav-toggle.active .nav-toggle__bar:nth-child(2) {
   opacity: 0;
 }
-
 .nav-toggle.active .nav-toggle__bar:nth-child(3) {
   transform: translateY(-6.5px) rotate(-45deg);
 }
@@ -283,7 +252,6 @@ a:hover {
 
 /* ============================================================
    FOOTER
-   Quiet, restrained.
    ============================================================ */
 .site-footer {
   padding: var(--space-xl) 0;
@@ -334,7 +302,6 @@ a:hover {
 
 /* ============================================================
    PICTURE FRAME CARDS — 3D Floating Hover
-   Used: Homepage gateways + Work page featured essays
    ============================================================ */
 .frame-card {
   position: relative;
@@ -355,7 +322,7 @@ a:hover {
   overflow: hidden;
 }
 
-/* Gold accent line — hidden by default, animates in on hover */
+/* Gold accent line — animates in on hover */
 .frame-card::before {
   content: '';
   position: absolute;
@@ -389,6 +356,7 @@ a:hover {
   letter-spacing: 0.12em;
   color: var(--gold-dark);
   margin-bottom: var(--space-xs);
+  display: block;
 }
 
 .frame-card__title {
@@ -426,8 +394,6 @@ a:hover {
 /* ============================================================
    HOMEPAGE
    ============================================================ */
-
-/* Hero — centered, generous whitespace */
 .home-hero {
   display: flex;
   flex-direction: column;
@@ -464,7 +430,6 @@ a:hover {
   line-height: 1.6;
 }
 
-
 /* Gateway Cards Grid */
 .home-gateways {
   padding: 0 0 var(--space-3xl);
@@ -492,7 +457,7 @@ a:hover {
 
 
 /* ============================================================
-   CONTENT PAGES (About, Book, Devotionals, Join)
+   CONTENT PAGES
    ============================================================ */
 .page-content {
   max-width: var(--reading-width);
@@ -509,21 +474,12 @@ a:hover {
   margin-bottom: var(--space-md);
 }
 
-/* Quiet divider between sections */
 .section-rule {
   width: 40px;
   height: 1px;
   background-color: var(--gold);
   border: none;
   margin: var(--space-xl) 0;
-}
-
-.gold-rule {
-  width: 60px;
-  height: 1px;
-  background-color: var(--gold);
-  border: none;
-  margin: var(--space-md) auto;
 }
 
 
@@ -581,7 +537,8 @@ a:hover {
     display: flex;
   }
 
-  .container {
+  .container,
+  .container--narrow {
     padding: 0 var(--space-md);
   }
 
@@ -596,6 +553,10 @@ a:hover {
 
   .home-gateways__grid {
     padding: 0 var(--space-md);
+  }
+
+  .page-content {
+    padding: 0 var(--space-md) var(--space-3xl);
   }
 }
 
@@ -622,7 +583,7 @@ a:hover {
 
 
 /* ============================================================
-   SUBTLE PARCHMENT TEXTURE OVERLAY
+   SUBTLE PARCHMENT TEXTURE
    ============================================================ */
 body::before {
   content: '';
