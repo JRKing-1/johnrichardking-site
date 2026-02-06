@@ -3,34 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Join the Journey — The Foundry</title>
-  <meta name="description" content="Walk alongside. Stay in the conversation.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;450;500&display=swap" rel="stylesheet">
-
+  <title>Join the Journey — John Richard King</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Inter:wght@300;400;450;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="main.js" defer></script>
 </head>
 <body>
-
   <div class="gold-top-rule"></div>
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a href="index.html" class="site-header__brand">
-        <span class="site-header__title">The Foundry</span>
-        <span class="site-header__subtitle">by John Richard King</span>
-      </a>
-      <nav class="site-nav" id="site-nav">
-        <a href="work.html" class="site-nav__link">The Work</a>
-        <a href="book.html" class="site-nav__link">The Book</a>
-        <a href="devotionals.html" class="site-nav__link">Devotionals</a>
-        <a href="about.html" class="site-nav__link">About</a>
-        <a href="join.html" class="site-nav__cta site-nav__link--active">Join the Journey</a>
+      <div class="site-header__brand">
+        <h1 class="site-header__title">John Richard King</h1>
+      </div>
+      <nav class="site-nav">
+        <li><a href="index.html" class="site-nav__link">Home</a></li>
+        <li><a href="work.html" class="site-nav__link">The Work</a></li>
+        <li><a href="book.html" class="site-nav__link">The Book</a></li>
+        <li><a href="devotionals.html" class="site-nav__link">Devotionals</a></li>
+        <li><a href="about.html" class="site-nav__link">About</a></li>
+        <li><a href="join.html" class="site-nav__link site-nav__cta site-nav__link--active">JOIN THE JOURNEY</a></li>
       </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation menu">
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
@@ -38,24 +31,116 @@
     </div>
   </header>
 
-  <main>
-    <section class="page-hero">
+  <section class="page-hero">
+    <div>
       <h1 class="page-hero__title">Join the Journey</h1>
       <div class="page-hero__rule"></div>
-      <p class="page-hero__subtitle">Walk alongside. Stay in the conversation.</p>
-    </section>
+      <p class="page-hero__subtitle">Be the first to receive new writings, updates, and reflections on faith and formation.</p>
+    </div>
+  </section>
 
-    <section class="page-content container--narrow">
-      <p>This is where readers will connect. An invitation, not a sales pitch.</p>
-      <div class="section-rule"></div>
-      <p>The door is open. The form will follow in Phase 2.</p>
-    </section>
-  </main>
+  <div class="page-content">
+    <h2>Subscribe for Weekly Reflections</h2>
+    <p>
+      Subscribe to receive weekly devotionals, exclusive updates on John's upcoming memoir, and reflections on faith, loss, and the work of God in our lives. Our community is small and intentional, and each message is personally crafted to invite deeper spiritual reflection.
+    </p>
+
+    <p>
+      By joining, you'll get:
+    </p>
+
+    <ul style="list-style: none; padding-left: 0; margin-bottom: 2rem;">
+      <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+        <span style="position: absolute; left: 0; color: var(--gold); font-weight: bold;">✓</span>
+        Weekly written devotionals exploring themes of faith and formation
+      </li>
+      <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+        <span style="position: absolute; left: 0; color: var(--gold); font-weight: bold;">✓</span>
+        Exclusive updates on the upcoming memoir release
+      </li>
+      <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+        <span style="position: absolute; left: 0; color: var(--gold); font-weight: bold;">✓</span>
+        Access to recorded audio devotionals
+      </li>
+      <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+        <span style="position: absolute; left: 0; color: var(--gold); font-weight: bold;">✓</span>
+        Behind-the-scenes insights from the author's creative process
+      </li>
+      <li style="padding-left: 2rem; position: relative;">
+        <span style="position: absolute; left: 0; color: var(--gold); font-weight: bold;">✓</span>
+        A community of people seeking deeper faith and spiritual transformation
+      </li>
+    </ul>
+
+    <div class="section-rule"></div>
+
+    <h2>Subscribe</h2>
+    <form class="join-form" style="margin: 2rem 0; background: transparent; flex-direction: row; max-width: 400px;" onsubmit="handleJoinSubmit(event)">
+      <input type="email" class="join-form__input" style="background-color: var(--cream-light); color: var(--ink); border-color: var(--gold-hairline);" placeholder="your email address" required>
+      <button type="submit" class="join-form__btn" style="flex: 0 0 auto;">JOIN</button>
+    </form>
+
+    <p style="font-size: 0.9rem; color: var(--ink-muted); max-width: 400px;">
+      No spam. Weekly reflections and occasional updates only. You can unsubscribe anytime. Your email is secure and will never be shared.
+    </p>
+
+    <div class="section-rule" style="margin-top: 4rem;"></div>
+
+    <h2>Other Ways to Connect</h2>
+    <p>
+      In addition to email, you can find John's work in various places:
+    </p>
+
+    <ul style="list-style: none; padding-left: 0;">
+      <li style="margin-bottom: 1rem;">
+        <strong>On the Website:</strong> Read essays and reflections in The Work section, explore the upcoming memoir, and learn more about his speaking engagements.
+      </li>
+      <li style="margin-bottom: 1rem;">
+        <strong>Audio Devotionals:</strong> Listen to recorded reflections on your favorite podcast platform or directly from this website.
+      </li>
+      <li style="margin-bottom: 1rem;">
+        <strong>Speaking Engagements:</strong> John speaks at churches, retreats, conferences, and other faith communities. If you'd like to inquire about a speaking engagement, please reach out.
+      </li>
+      <li>
+        <strong>Retreat Leadership:</strong> John also leads spiritual formation retreats designed to help people explore faith, loss, and transformation in community with others.
+      </li>
+    </ul>
+
+    <p style="text-align: center; margin-top: 3rem;">
+      <a href="index.html" class="btn-gold">RETURN HOME</a>
+    </p>
+  </div>
 
   <footer class="site-footer">
-    <div class="container">
-      <p class="site-footer__text">Built by hand. Led by heart. Forged for purpose.</p>
+    <div class="site-footer__inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand__name">John Richard King</div>
+          <div class="footer-brand__role">Author & Speaker</div>
+        </div>
+        <nav class="footer-nav">
+          <a href="work.html">The Work</a>
+          <a href="book.html">The Book</a>
+          <a href="devotionals.html">Devotionals</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom__copy">© 2024 John Richard King. All rights reserved.</div>
+        <div class="footer-bottom__motto">Language is forged while the work is being done.</div>
+      </div>
     </div>
   </footer>
+
+  <div class="footer-gold-rule"></div>
+
+  <script>
+    function handleJoinSubmit(e) {
+      e.preventDefault();
+      alert('Thank you for subscribing! Check your email to confirm.');
+      e.target.reset();
+    }
+  </script>
+  <script src="main.js" defer></script>
 </body>
 </html>

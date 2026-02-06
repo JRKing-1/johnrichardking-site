@@ -3,34 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Book — The Foundry</title>
-  <meta name="description" content="A work in progress, forged with intention.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;450;500&display=swap" rel="stylesheet">
-
+  <title>The Book — John Richard King</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Inter:wght@300;400;450;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="main.js" defer></script>
 </head>
 <body>
-
   <div class="gold-top-rule"></div>
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a href="index.html" class="site-header__brand">
-        <span class="site-header__title">The Foundry</span>
-        <span class="site-header__subtitle">by John Richard King</span>
-      </a>
-      <nav class="site-nav" id="site-nav">
-        <a href="work.html" class="site-nav__link">The Work</a>
-        <a href="book.html" class="site-nav__link site-nav__link--active">The Book</a>
-        <a href="devotionals.html" class="site-nav__link">Devotionals</a>
-        <a href="about.html" class="site-nav__link">About</a>
-        <a href="join.html" class="site-nav__cta">Join the Journey</a>
+      <div class="site-header__brand">
+        <h1 class="site-header__title">John Richard King</h1>
+      </div>
+      <nav class="site-nav">
+        <li><a href="index.html" class="site-nav__link">Home</a></li>
+        <li><a href="work.html" class="site-nav__link">The Work</a></li>
+        <li><a href="book.html" class="site-nav__link site-nav__link--active">The Book</a></li>
+        <li><a href="devotionals.html" class="site-nav__link">Devotionals</a></li>
+        <li><a href="about.html" class="site-nav__link">About</a></li>
+        <li><a href="join.html" class="site-nav__link site-nav__cta">JOIN THE JOURNEY</a></li>
       </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation menu">
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
@@ -38,24 +31,67 @@
     </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <h1 class="page-hero__title">The Book</h1>
+  <section class="page-hero">
+    <div>
+      <h1 class="page-hero__title">A Severe Act of Mercy</h1>
       <div class="page-hero__rule"></div>
-      <p class="page-hero__subtitle">A work in progress, forged with intention.</p>
-    </section>
+      <p class="page-hero__subtitle">Currently being written</p>
+    </div>
+  </section>
 
-    <section class="page-content container--narrow">
-      <p>Details about the book will live here. This is a placeholder for Phase 2 content.</p>
-      <div class="section-rule"></div>
-      <p>The framework is set. The story is coming.</p>
-    </section>
-  </main>
+  <div class="page-content">
+    <h2>About the Book</h2>
+    <p>
+      A Severe Act of Mercy is a memoir that explores the intersection of faith, loss, and transformation. Through a series of interconnected stories, John Richard King invites readers into his journey of learning to surrender control and trust in God's mercy, even when that mercy comes through unexpected seasons of difficulty.
+    </p>
+    <p>
+      The book opens with a moment of profound loss and traces how that loss became a doorway into deeper faith. It's a story about what happens when our plans collide with God's calling, and how the grace we receive in those moments shapes us in ways we could never have anticipated.
+    </p>
+
+    <div class="section-rule"></div>
+
+    <h2>Why This Book?</h2>
+    <p>
+      In a culture that celebrates control and self-determination, this memoir offers a different perspective. It's for anyone who has experienced loss and struggled to find meaning in it. It's for those who feel called to something larger than themselves but are unsure what that calling means. And it's for readers who believe that our stories—especially the hard chapters—matter deeply.
+    </p>
+    <p>
+      King's writing combines spiritual reflection with honest vulnerability. He doesn't offer easy answers or quick fixes. Instead, he invites readers to sit with difficult questions and discover that God's mercy often looks different than we expect.
+    </p>
+
+    <div class="section-rule"></div>
+
+    <h2>Coming Soon</h2>
+    <p>
+      A Severe Act of Mercy is currently being written. Sign up to receive updates on the publication date and to be among the first readers when it launches. You'll also receive exclusive excerpts and reflections from the author as the work develops.
+    </p>
+    <p style="text-align: center; margin-top: 2rem;">
+      <a href="join.html" class="btn-gold">NOTIFY ME WHEN READY</a>
+    </p>
+  </div>
 
   <footer class="site-footer">
-    <div class="container">
-      <p class="site-footer__text">Built by hand. Led by heart. Forged for purpose.</p>
+    <div class="site-footer__inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand__name">John Richard King</div>
+          <div class="footer-brand__role">Author & Speaker</div>
+        </div>
+        <nav class="footer-nav">
+          <a href="work.html">The Work</a>
+          <a href="book.html">The Book</a>
+          <a href="devotionals.html">Devotionals</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom__copy">© 2024 John Richard King. All rights reserved.</div>
+        <div class="footer-bottom__motto">Language is forged while the work is being done.</div>
+      </div>
     </div>
   </footer>
+
+  <div class="footer-gold-rule"></div>
+
+  <script src="main.js" defer></script>
 </body>
 </html>

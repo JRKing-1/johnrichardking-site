@@ -1,80 +1,94 @@
-document.addEventListener('DOMContentLoaded', function() {
+// Mobile navigation toggle
+const navToggle = document.querySelector('.nav-toggle');
+const siteNav = document.querySelector('.site-nav');
 
-  // ========================================
-  // 1. MOBILE NAV
-  // ========================================
-  var toggle = document.getElementById('nav-toggle');
-  var nav = document.getElementById('site-nav');
+if (navToggle) {
+  navToggle.addEventListener('click', function() {
+    siteNav.classList.toggle('active');
+    navToggle.classList.toggle('active');
+  });
 
-  if (toggle && nav) {
-    toggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      toggle.classList.toggle('active');
-      nav.classList.toggle('open');
+  // Close nav on link click
+  const navLinks = siteNav.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      siteNav.classList.remove('active');
+      navToggle.classList.remove('active');
     });
+  });
+}
 
-    nav.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        toggle.classList.remove('active');
-        nav.classList.remove('open');
-      });
-    });
-
-    document.addEventListener('click', function(e) {
-      if (!toggle.contains(e.target) && !nav.contains(e.target)) {
-        toggle.classList.remove('active');
-        nav.classList.remove('open');
-      }
-    });
+// Close nav on outside click
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.site-nav') && !e.target.closest('.nav-toggle')) {
+    siteNav.classList.remove('active');
+    if (navToggle) {
+      navToggle.classList.remove('active');
+    }
   }
-
-  // ========================================
-  // 2. HEADER SCROLL SHADOW
-  // ========================================
-  var header = document.querySelector('.site-header');
-
-  function onScroll() {
-    if (!header) return;
-    header.classList.toggle('scrolled', window.scrollY > 10);
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // ========================================
-  // 3. SUBTLE 3D TILT ON .frame-card
-  // ========================================
-  var canHover = window.matchMedia('(hover: hover)').matches;
-  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (canHover && !reducedMotion) {
-    document.querySelectorAll('.frame-card').forEach(function(card) {
-
-      card.addEventListener('mouseenter', function() {
-        card.style.transition = 'box-shadow 0.35s ease, border-color 0.35s ease';
-      });
-
-      card.addEventListener('mousemove', function(e) {
-        var rect = card.getBoundingClientRect();
-        var dx = ((e.clientX - rect.left) - rect.width / 2) / (rect.width / 2);
-        var dy = ((e.clientY - rect.top) - rect.height / 2) / (rect.height / 2);
-
-        card.style.transform =
-          'perspective(800px) rotateX(' + (-dy * 1.5) + 'deg) rotateY(' + (dx * 1.5) + 'deg) translateY(-5px)';
-      });
-
-      card.addEventListener('mouseleave', function() {
-        card.style.transition = 'transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease';
-        card.style.transform = '';
-      });
-    });
-  }
-
-  // ========================================
-  // 4. LOADED STATE
-  // ========================================
-  setTimeout(function() {
-    document.body.classList.add('loaded');
-  }, 50);
-
 });
+
+// Header scroll shadow
+const siteHeader = document.querySelector('.site-header');
+
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 10) {
+    siteHeader.classList.add('scrolled');
+  } else {
+    siteHeader.classList.remove('scrolled');
+  }
+});
+
+// Update active nav link on scroll
+const navLinks = document.querySelectorAll('.site-nav__link');
+const sections = document.querySelectorAll('section[id]');
+
+window.addEventListener('scroll', function() {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (scrollY >= sectionTop - 200) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('site-nav__link--active');
+    if (link.getAttribute('href').includes(current)) {
+      link.classList.add('site-nav__link--active');
+    }
+  });
+});
+
+// Subtle 3D tilt on cards (only if hover supported and no reduced-motion)
+const supportsHover = window.matchMedia('(hover: hover)').matches;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (supportsHover && !prefersReducedMotion) {
+  const cards = document.querySelectorAll('.work-card, .frame-card, .devo-preview');
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = (y - centerY) / 100;
+      const rotateY = (centerX - x) / 100;
+
+      card.style.transform = `perspective(800px) rotateX(${Math.min(Math.max(rotateX, -1.5), 1.5)}deg) rotateY(${Math.min(Math.max(rotateY, -1.5), 1.5)}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener('mouseleave', function() {
+      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+    });
+  });
+}
+
+// Add loaded class to body after 50ms
+setTimeout(function() {
+  document.body.classList.add('loaded');
+}, 50);

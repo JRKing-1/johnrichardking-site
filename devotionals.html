@@ -3,34 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devotionals — The Foundry</title>
-  <meta name="description" content="Daily words, carefully chosen.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;450;500&display=swap" rel="stylesheet">
-
+  <title>Devotionals — John Richard King</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Inter:wght@300;400;450;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="main.js" defer></script>
 </head>
 <body>
-
   <div class="gold-top-rule"></div>
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a href="index.html" class="site-header__brand">
-        <span class="site-header__title">The Foundry</span>
-        <span class="site-header__subtitle">by John Richard King</span>
-      </a>
-      <nav class="site-nav" id="site-nav">
-        <a href="work.html" class="site-nav__link">The Work</a>
-        <a href="book.html" class="site-nav__link">The Book</a>
-        <a href="devotionals.html" class="site-nav__link site-nav__link--active">Devotionals</a>
-        <a href="about.html" class="site-nav__link">About</a>
-        <a href="join.html" class="site-nav__cta">Join the Journey</a>
+      <div class="site-header__brand">
+        <h1 class="site-header__title">John Richard King</h1>
+      </div>
+      <nav class="site-nav">
+        <li><a href="index.html" class="site-nav__link">Home</a></li>
+        <li><a href="work.html" class="site-nav__link">The Work</a></li>
+        <li><a href="book.html" class="site-nav__link">The Book</a></li>
+        <li><a href="devotionals.html" class="site-nav__link site-nav__link--active">Devotionals</a></li>
+        <li><a href="about.html" class="site-nav__link">About</a></li>
+        <li><a href="join.html" class="site-nav__link site-nav__cta">JOIN THE JOURNEY</a></li>
       </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation menu">
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
@@ -38,24 +31,74 @@
     </div>
   </header>
 
-  <main>
-    <section class="page-hero">
+  <section class="page-hero">
+    <div>
       <h1 class="page-hero__title">Devotionals</h1>
       <div class="page-hero__rule"></div>
-      <p class="page-hero__subtitle">Daily words, carefully chosen.</p>
-    </section>
+      <p class="page-hero__subtitle">Weekly spiritual reflections on faith, formation, and God's presence in our lives.</p>
+    </div>
+  </section>
 
-    <section class="page-content container--narrow">
-      <p>Devotional entries will be collected here. Phase 2 will populate this space.</p>
-      <div class="section-rule"></div>
-      <p>Structure first. Substance next.</p>
-    </section>
-  </main>
+  <div class="page-content">
+    <h2>Weekly Reflections</h2>
+    <p>
+      Join us for weekly devotional reflections exploring themes of faith, loss, mercy, and spiritual formation. Available in two formats: brief written reflections sent via email, and recorded audio devotionals for listening.
+    </p>
+    <p>
+      Each week's reflection focuses on a single theme or question, inviting you into deeper spiritual contemplation and practice. These are not quick fixes or surface-level inspirational quotes, but rather thoughtful meditations designed to shape how we understand God's work in our lives.
+    </p>
+
+    <div class="section-rule"></div>
+
+    <h2>Voice Devotionals</h2>
+    <p>
+      Listen to John Richard King's voice as he shares weekly reflections on faith and formation. These 5-10 minute recordings are available on your favorite podcast platform, offering a personal connection to the author's thoughts and inviting you into a contemplative space.
+    </p>
+    <p>
+      Perfect for morning reflection, commutes, or evening prayer, voice devotionals provide a way to engage with spiritual themes in the midst of your daily life.
+    </p>
+
+    <div class="section-rule"></div>
+
+    <h2>Written Devotionals</h2>
+    <p>
+      Receive weekly written reflections in your email inbox. These more detailed essays allow for deeper exploration of themes and offer space for personal journaling and reflection.
+    </p>
+    <p>
+      Each written devotional includes the author's meditation, relevant Scripture passages, reflection questions, and a closing prayer. They're designed to be read slowly, savored, and lived with throughout the week.
+    </p>
+
+    <div class="section-rule"></div>
+
+    <h2>Subscribe</h2>
+    <p style="text-align: center; margin-top: 2rem;">
+      <a href="join.html" class="btn-gold">SUBSCRIBE TO DEVOTIONALS</a>
+    </p>
+  </div>
 
   <footer class="site-footer">
-    <div class="container">
-      <p class="site-footer__text">Built by hand. Led by heart. Forged for purpose.</p>
+    <div class="site-footer__inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand__name">John Richard King</div>
+          <div class="footer-brand__role">Author & Speaker</div>
+        </div>
+        <nav class="footer-nav">
+          <a href="work.html">The Work</a>
+          <a href="book.html">The Book</a>
+          <a href="devotionals.html">Devotionals</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom__copy">© 2024 John Richard King. All rights reserved.</div>
+        <div class="footer-bottom__motto">Language is forged while the work is being done.</div>
+      </div>
     </div>
   </footer>
+
+  <div class="footer-gold-rule"></div>
+
+  <script src="main.js" defer></script>
 </body>
 </html>

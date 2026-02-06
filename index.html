@@ -3,36 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Foundry — by John Richard King</title>
-  <meta name="description" content="Where conviction meets craft. Essays, reflections, and hard-won clarity.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;450;500&display=swap" rel="stylesheet">
-
+  <title>John Richard King — Author & Speaker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Inter:wght@300;400;450;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="main.js" defer></script>
 </head>
 <body>
-
-  <!-- Gold top rule -->
   <div class="gold-top-rule"></div>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="site-header__inner">
-      <a href="index.html" class="site-header__brand">
-        <span class="site-header__title">The Foundry</span>
-        <span class="site-header__subtitle">by John Richard King</span>
-      </a>
-      <nav class="site-nav" id="site-nav">
-        <a href="work.html" class="site-nav__link">The Work</a>
-        <a href="book.html" class="site-nav__link">The Book</a>
-        <a href="devotionals.html" class="site-nav__link">Devotionals</a>
-        <a href="about.html" class="site-nav__link">About</a>
-        <a href="join.html" class="site-nav__cta">Join the Journey</a>
+      <div class="site-header__brand">
+        <h1 class="site-header__title">John Richard King</h1>
+      </div>
+      <nav class="site-nav">
+        <li><a href="#home" class="site-nav__link site-nav__link--active">Home</a></li>
+        <li><a href="#the-work" class="site-nav__link">The Work</a></li>
+        <li><a href="#the-book" class="site-nav__link">The Book</a></li>
+        <li><a href="#devotionals" class="site-nav__link">Devotionals</a></li>
+        <li><a href="#about" class="site-nav__link">About</a></li>
+        <li><a href="#join" class="site-nav__link site-nav__cta">JOIN THE JOURNEY</a></li>
       </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation menu">
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
@@ -40,47 +31,227 @@
     </div>
   </header>
 
-  <main>
-
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero__inner">
-        <div class="hero__photo-frame">
-          <!-- Replace src with actual JRK photo -->
-          <img
-            class="hero__photo"
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=720&fit=crop&crop=face&auto=format&q=80"
-            alt="John Richard King"
-          >
+  <section class="hero" id="home">
+    <div class="hero__inner">
+      <div class="hero__text">
+        <span class="hero__overline">A STORY UNFOLDING</span>
+        <h1 class="hero__headline">The severe <em>mercy</em> of God</h1>
+        <p class="hero__body">
+          In the midst of pain, we discover that God's mercy is not the removal of hardship, but his presence within it. The severe mercy of God is found not in ease, but in transformation.
+        </p>
+        <p class="hero__body">
+          This is a story about loss, faith, and the unexpected graces that emerge when we learn to surrender our plans to something larger than ourselves.
+        </p>
+        <div class="hero__actions">
+          <button class="btn-primary" onclick="document.getElementById('the-work').scrollIntoView({behavior: 'smooth'})">EXPLORE THE WORK</button>
+          <button class="btn-secondary" onclick="document.getElementById('join').scrollIntoView({behavior: 'smooth'})">STAY CONNECTED</button>
         </div>
-        <div class="hero__text">
-          <p class="hero__overline">A Story Unfolding</p>
-          <h1 class="hero__headline">Built by hand.<br>Led by heart.<br>Forged for purpose.</h1>
-          <p class="hero__body">Essays, reflections, and the slow work of building something that endures. This is where conviction meets craft.</p>
-          <div class="hero__actions">
-            <a href="work.html" class="btn-primary">Read The Work</a>
-            <a href="book.html" class="btn-secondary">About the Book</a>
+      </div>
+      <div class="hero__photo-wrap">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop" alt="John Richard King" class="hero__photo">
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-banner">
+    <div class="dark-banner__inner">
+      <div class="dark-banner__icon">"</div>
+      <p class="dark-banner__quote">Language is forged only while the work is being done, not before it, and the work, it seems, is always ahead of the word.</p>
+    </div>
+  </section>
+
+  <section class="work-section" id="the-work">
+    <div class="work-section__inner">
+      <span class="section-overline">ESSAYS · REFLECTIONS · WITNESS</span>
+      <h2 class="section-title">The Work</h2>
+      <p class="section-subtitle">Essays and reflections on faith, loss, mercy, and what it means to witness the work of God in an uncertain world.</p>
+      <span class="section-label">BEGIN HERE</span>
+
+      <div class="work-grid">
+        <div class="work-card">
+          <div class="work-card__icon">⚖️</div>
+          <div class="work-card__question">What does restraint teach us?</div>
+          <h3 class="work-card__title">Presence Without Assignment Becomes Intrusion</h3>
+          <div class="tags-row">
+            <span class="tag">Presence</span>
+            <span class="tag">Authority</span>
+            <span class="tag">Formation</span>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card__icon">🚪</div>
+          <div class="work-card__question">When do we step back?</div>
+          <h3 class="work-card__title">Withdraw When Restraint Is No Longer Enough</h3>
+          <div class="tags-row">
+            <span class="tag">Restraint</span>
+            <span class="tag">Obedience</span>
+            <span class="tag">Witness</span>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card__icon">✨</div>
+          <div class="work-card__question">How do we discern?</div>
+          <h3 class="work-card__title">Good Isn't the Same as Called</h3>
+          <div class="tags-row">
+            <span class="tag">Calling</span>
+            <span class="tag">Loss & Mercy</span>
+            <span class="tag">Formation</span>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Dark Banner -->
-    <section class="dark-banner">
-      <div class="dark-banner__inner">
-        <p class="dark-banner__quote">"The work is not the performance. The work is the daily act of showing up, staying honest, and building something worthy of the time it takes."</p>
-        <div class="dark-banner__rule"></div>
-        <p class="dark-banner__attr">John Richard King</p>
+      <a href="work.html" class="view-all-link">→ VIEW ALL WRITINGS</a>
+    </div>
+  </section>
+
+  <section class="book-section" id="the-book">
+    <div class="book-section__inner">
+      <div class="book-cover">
+        <div class="book-cover__label">A MEMOIR</div>
+        <div class="book-cover__title">A Severe Act of Mercy</div>
+        <div class="book-cover__rule"></div>
+        <div class="book-cover__author">John Richard King</div>
       </div>
-    </section>
+      <div>
+        <span class="book-text__overline">COMING SOON</span>
+        <h2 class="book-text__title">A Severe Act of Mercy</h2>
+        <p class="book-text__status">Currently being written</p>
+        <p class="book-text__body">
+          This memoir tells the story of how God's mercy shaped my life through unexpected loss and faith. It explores the tension between what we plan and what God calls us to, and the strange gifts that emerge when we learn to surrender.
+        </p>
 
-  </main>
+        <div class="book-fit">
+          <div class="book-fit__col">
+            <h4>For You If</h4>
+            <ul class="book-fit__list">
+              <li>You've experienced profound loss</li>
+              <li>You struggle with faith in hard seasons</li>
+              <li>You're learning to surrender control</li>
+              <li>You seek spiritual transformation</li>
+            </ul>
+          </div>
+          <div class="book-fit__col book-fit__col--not">
+            <h4>Not For You If</h4>
+            <ul class="book-fit__list">
+              <li>You want easy answers</li>
+              <li>You seek entertainment only</li>
+              <li>You reject spiritual reflection</li>
+              <li>You avoid difficult truths</li>
+            </ul>
+          </div>
+        </div>
 
-  <!-- Footer -->
+        <button class="btn-gold">NOTIFY ME</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="devotionals-section" id="devotionals">
+    <div class="devotionals-section__inner">
+      <span class="section-overline">WEEKLY REFLECTIONS</span>
+      <h2 class="section-title">Devotionals</h2>
+      <p class="section-subtitle">Brief spiritual reflections for the week ahead, exploring faith, loss, and God's presence in our daily lives.</p>
+
+      <div class="devos-cards">
+        <div class="devo-card devo-card--voice">
+          <div class="devo-card__icon">🎧</div>
+          <h3 class="devo-card__title">Voice Devotionals</h3>
+          <p class="devo-card__platform">Podcast</p>
+          <p class="devo-card__body">Hear weekly reflections on faith and formation delivered in the author's own voice.</p>
+        </div>
+        <div class="devo-card devo-card--written">
+          <div class="devo-card__icon">✍️</div>
+          <h3 class="devo-card__title">Written Devotionals</h3>
+          <p class="devo-card__platform">Email & Web</p>
+          <p class="devo-card__body">Read thoughtful essays on spiritual growth delivered weekly to your inbox.</p>
+        </div>
+      </div>
+
+      <div class="devo-previews">
+        <div class="devo-preview">
+          <h4 class="devo-preview__title">The Gift of Small Obedience</h4>
+          <p class="devo-preview__excerpt">Sometimes the most profound acts of faith are the smallest ones. We wait for dramatic moments, but transformation often comes through quiet surrender.</p>
+        </div>
+        <div class="devo-preview">
+          <h4 class="devo-preview__title">Learning to Receive</h4>
+          <p class="devo-preview__excerpt">Our culture celebrates independence, but spiritual maturity often means learning to receive from God and others. What does it mean to truly receive?</p>
+        </div>
+        <div class="devo-preview">
+          <h4 class="devo-preview__title">The Work of Witness</h4>
+          <p class="devo-preview__excerpt">We are called not to fix others, but to witness their journey. What does faithful witnessing look like when we cannot control outcomes?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="about-section__inner">
+      <div class="about-photo">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop" alt="John Richard King">
+      </div>
+      <div class="about-text">
+        <span class="about-text__overline">ABOUT</span>
+        <h2 class="about-text__title">A Story Still Being Written</h2>
+        <p>
+          John Richard King is an author and speaker exploring the intersection of faith, loss, and transformation. His work focuses on how God's mercy shapes us through unexpected seasons of difficulty and change.
+        </p>
+        <p>
+          For the past fifteen years, John has been involved in spiritual formation work, helping others navigate the difficult terrain between what they planned and what God is calling them to. He believes that our stories matter, and that the hard chapters are often the most sacred.
+        </p>
+        <p>
+          When not writing or speaking, John spends time with his family, reading theology and literature, and walking in nature. He is currently working on his memoir and weekly devotional reflections.
+        </p>
+        <a href="about.html" class="follow-link">→ READ HIS STORY</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="join-section" id="join">
+    <div class="join-section__inner">
+      <div class="join__icon">✉</div>
+      <h2 class="join__title">Join the Journey</h2>
+      <p class="join__subtitle">Be the first to hear about new writings and reflections</p>
+      <p class="join__body">
+        Subscribe to receive weekly devotionals, updates on the upcoming memoir, and reflections on faith, loss, and God's mercy in our lives.
+      </p>
+      <form class="join-form" onsubmit="handleJoinSubmit(event)">
+        <input type="email" class="join-form__input" placeholder="your email address" required>
+        <button type="submit" class="join-form__btn">JOIN</button>
+      </form>
+      <p class="join__fine-print">No spam. Weekly reflections and updates only. You can unsubscribe anytime.</p>
+    </div>
+  </section>
+
   <footer class="site-footer">
-    <div class="container">
-      <p class="site-footer__text">Built by hand. Led by heart. Forged for purpose.</p>
+    <div class="site-footer__inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand__name">John Richard King</div>
+          <div class="footer-brand__role">Author & Speaker</div>
+        </div>
+        <nav class="footer-nav">
+          <a href="#the-work">The Work</a>
+          <a href="#the-book">The Book</a>
+          <a href="#devotionals">Devotionals</a>
+          <a href="#about">About</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom__copy">© 2024 John Richard King. All rights reserved.</div>
+        <div class="footer-bottom__motto">Language is forged while the work is being done.</div>
+      </div>
     </div>
   </footer>
+
+  <div class="footer-gold-rule"></div>
+
+  <script>
+    function handleJoinSubmit(e) {
+      e.preventDefault();
+      alert('Thank you for subscribing! Check your email to confirm.');
+      e.target.reset();
+    }
+  </script>
+  <script src="main.js" defer></script>
 </body>
 </html>
