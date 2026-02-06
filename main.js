@@ -1,31 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // ========================================
-  // 1. MOBILE NAV TOGGLE
-  // ========================================
-  const navToggle = document.getElementById('nav-toggle');
-  const siteNav = document.getElementById('site-nav');
 
-  if (navToggle && siteNav) {
-    navToggle.addEventListener('click', function() {
-      navToggle.classList.toggle('active');
-      siteNav.classList.toggle('open');
+  // ========================================
+  // 1. MOBILE NAV
+  // ========================================
+  var toggle = document.getElementById('nav-toggle');
+  var nav = document.getElementById('site-nav');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggle.classList.toggle('active');
+      nav.classList.toggle('open');
     });
 
-    const navLinks = siteNav.querySelectorAll('a');
-    navLinks.forEach(function(link) {
+    nav.querySelectorAll('a').forEach(function(link) {
       link.addEventListener('click', function() {
-        navToggle.classList.remove('active');
-        siteNav.classList.remove('open');
+        toggle.classList.remove('active');
+        nav.classList.remove('open');
       });
     });
 
-    document.addEventListener('click', function(event) {
-      const isClickInsideNav = siteNav.contains(event.target);
-      const isClickInsideToggle = navToggle.contains(event.target);
-
-      if (!isClickInsideNav && !isClickInsideToggle) {
-        navToggle.classList.remove('active');
-        siteNav.classList.remove('open');
+    document.addEventListener('click', function(e) {
+      if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+        toggle.classList.remove('active');
+        nav.classList.remove('open');
       }
     });
   }
@@ -33,67 +31,50 @@ document.addEventListener('DOMContentLoaded', function() {
   // ========================================
   // 2. HEADER SCROLL SHADOW
   // ========================================
-  const siteHeader = document.querySelector('.site-header');
+  var header = document.querySelector('.site-header');
 
-  function updateHeaderShadow() {
-    if (siteHeader) {
-      if (window.scrollY > 20) {
-        siteHeader.classList.add('scrolled');
-      } else {
-        siteHeader.classList.remove('scrolled');
-      }
-    }
+  function onScroll() {
+    if (!header) return;
+    header.classList.toggle('scrolled', window.scrollY > 10);
   }
 
-  updateHeaderShadow();
-  window.addEventListener('scroll', updateHeaderShadow, { passive: true });
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
   // ========================================
   // 3. SUBTLE 3D TILT ON .frame-card
   // ========================================
-  if (window.matchMedia('(hover: hover)').matches) {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canHover = window.matchMedia('(hover: hover)').matches;
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (!prefersReducedMotion) {
-      const frameCards = document.querySelectorAll('.frame-card');
+  if (canHover && !reducedMotion) {
+    document.querySelectorAll('.frame-card').forEach(function(card) {
 
-      frameCards.forEach(function(card) {
-        const originalTransition = window.getComputedStyle(card).transition;
-
-        card.addEventListener('mouseenter', function() {
-          card.style.transition = 'box-shadow 0.3s ease, border-color 0.3s ease';
-        });
-
-        card.addEventListener('mousemove', function(event) {
-          const rect = card.getBoundingClientRect();
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-
-          const mouseX = event.clientX - rect.left;
-          const mouseY = event.clientY - rect.top;
-
-          const normalizedX = (mouseX - centerX) / centerX;
-          const normalizedY = (mouseY - centerY) / centerY;
-
-          const maxRotation = 2;
-          const rotateX = normalizedY * maxRotation;
-          const rotateY = normalizedX * -maxRotation;
-
-          card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
-        });
-
-        card.addEventListener('mouseleave', function() {
-          card.style.transition = originalTransition;
-          card.style.transform = '';
-        });
+      card.addEventListener('mouseenter', function() {
+        card.style.transition = 'box-shadow 0.35s ease, border-color 0.35s ease';
       });
-    }
+
+      card.addEventListener('mousemove', function(e) {
+        var rect = card.getBoundingClientRect();
+        var dx = ((e.clientX - rect.left) - rect.width / 2) / (rect.width / 2);
+        var dy = ((e.clientY - rect.top) - rect.height / 2) / (rect.height / 2);
+
+        card.style.transform =
+          'perspective(800px) rotateX(' + (-dy * 1.5) + 'deg) rotateY(' + (dx * 1.5) + 'deg) translateY(-5px)';
+      });
+
+      card.addEventListener('mouseleave', function() {
+        card.style.transition = 'transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease';
+        card.style.transform = '';
+      });
+    });
   }
 
   // ========================================
-  // 4. BODY LOADED CLASS
+  // 4. LOADED STATE
   // ========================================
   setTimeout(function() {
     document.body.classList.add('loaded');
   }, 50);
+
 });

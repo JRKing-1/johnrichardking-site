@@ -4,16 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Foundry — by John Richard King</title>
-  <meta name="description" content="The Foundry: Where conviction meets craft.">
+  <meta name="description" content="Where conviction meets craft. Essays, reflections, and hard-won clarity.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;450;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
   <script src="main.js" defer></script>
 </head>
 <body>
+
+  <!-- Gold top rule -->
+  <div class="gold-top-rule"></div>
+
+  <!-- Header -->
   <header class="site-header">
     <div class="site-header__inner">
       <a href="index.html" class="site-header__brand">
@@ -36,36 +41,42 @@
   </header>
 
   <main>
-    <section class="home-hero">
-      <h1 class="home-hero__title">The Foundry</h1>
-      <div class="home-hero__rule"></div>
-      <p class="home-hero__tagline">Where conviction meets craft.</p>
-    </section>
 
-    <section class="home-gateways">
-      <div class="home-gateways__grid">
-        <a href="index.html" class="frame-card">
-          <span class="frame-card__label">Enter</span>
-          <h3 class="frame-card__title">Home</h3>
-          <p class="frame-card__excerpt">A quiet starting point.</p>
-          <span class="frame-card__arrow">Begin &rarr;</span>
-        </a>
-        <a href="work.html" class="frame-card">
-          <span class="frame-card__label">Explore</span>
-          <h3 class="frame-card__title">The Work</h3>
-          <p class="frame-card__excerpt">Essays, reflections, and hard-won clarity.</p>
-          <span class="frame-card__arrow">Read &rarr;</span>
-        </a>
-        <a href="#" class="frame-card">
-          <span class="frame-card__label">Build</span>
-          <h3 class="frame-card__title">The Foundry</h3>
-          <p class="frame-card__excerpt">Tools forged for purpose.</p>
-          <span class="frame-card__arrow">Enter &rarr;</span>
-        </a>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="hero__photo-frame">
+          <!-- Replace src with actual JRK photo -->
+          <img
+            class="hero__photo"
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=720&fit=crop&crop=face&auto=format&q=80"
+            alt="John Richard King"
+          >
+        </div>
+        <div class="hero__text">
+          <p class="hero__overline">A Story Unfolding</p>
+          <h1 class="hero__headline">Built by hand.<br>Led by heart.<br>Forged for purpose.</h1>
+          <p class="hero__body">Essays, reflections, and the slow work of building something that endures. This is where conviction meets craft.</p>
+          <div class="hero__actions">
+            <a href="work.html" class="btn-primary">Read The Work</a>
+            <a href="book.html" class="btn-secondary">About the Book</a>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- Dark Banner -->
+    <section class="dark-banner">
+      <div class="dark-banner__inner">
+        <p class="dark-banner__quote">"The work is not the performance. The work is the daily act of showing up, staying honest, and building something worthy of the time it takes."</p>
+        <div class="dark-banner__rule"></div>
+        <p class="dark-banner__attr">John Richard King</p>
+      </div>
+    </section>
+
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <p class="site-footer__text">Built by hand. Led by heart. Forged for purpose.</p>
