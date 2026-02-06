@@ -1,2 +1,0 @@
-# johnrichardking-site
-JRK Website
